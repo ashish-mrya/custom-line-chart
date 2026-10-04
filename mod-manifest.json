@@ -1,0 +1,130 @@
+{
+    "apiVersion": "2.2",
+    "version": "1.0",
+    "name": "Custom Line Chart",
+    "id": "custom-line-chart-mod",
+    "icon": "icon.svg",
+    "type": "visualization",
+    "properties": [
+        {
+            "name": "yScaleMode",
+            "type": "string",
+            "defaultValue": "Single"
+        },
+        {
+            "name": "dualScaleAssignments",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "seriesStyles",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "yFormat",
+            "type": "string",
+            "defaultValue": "{\"decimals\":2,\"thousandsSeparator\":false,\"negativeStyle\":\"minus\",\"useShort\":false}"
+        },
+        {
+            "name": "xFormat",
+            "type": "string",
+            "defaultValue": "{\"decimals\":2,\"thousandsSeparator\":false,\"negativeStyle\":\"minus\",\"useShort\":false}"
+        },
+        {
+            "name": "xZoom",
+            "type": "string",
+            "defaultValue": "0,1"
+        },
+        {
+            "name": "yZoom",
+            "type": "string",
+            "defaultValue": "0,1"
+        },
+        {
+            "name": "showZoomSliders",
+            "type": "boolean",
+            "defaultValue": true
+        },
+        {
+            "name": "showMarkers",
+            "type": "boolean",
+            "defaultValue": false
+        },
+        {
+            "name": "markerSize",
+            "type": "integer",
+            "defaultValue": 4
+        }
+    ],
+    "dataViewDefinition": {
+        "tooltip": {
+            "enabled": true
+        },
+        "colorAxis": {
+            "mode": "categorical",
+            "dropTarget": {
+                "icon": "Color",
+                "description": "Color by {0}"
+            },
+            "automaticConfiguration": {
+                "expressionHeuristics": {
+                    "expression": "<[Axis.Default.Names]>"
+                }
+            }
+        },
+        "axes": [
+            {
+                "name": "X",
+                "mode": "categorical",
+                "placement": "bottom",
+                "dropTarget": {
+                    "icon": "XAxis3D",
+                    "description": "Use {0} on the X-axis"
+                }
+            },
+            {
+                "name": "Y",
+                "mode": "continuous",
+                "placement": "left",
+                "allowMultipleMeasures": true,
+                "allowNonAggregatingMeasures": "yes",
+                "dropTarget": {
+                    "icon": "YAxis",
+                    "description": "Use {0} on the Y-axis (multiple columns allowed)"
+                }
+            },
+            {
+                "name": "Size",
+                "mode": "continuous",
+                "placement": "none",
+                "optional": true,
+                "allowNonAggregatingMeasures": "yes",
+                "dropTarget": {
+                    "icon": "MarkerSize",
+                    "description": "Size markers by {0}"
+                },
+                "propertyControl": {
+                    "visibility": "visible",
+                    "title": "Marker size by"
+                },
+                "legendItem": {
+                    "defaultVisibility": "visible",
+                    "title": "Size by"
+                },
+                "automaticConfiguration": {
+                    "expressionHeuristics": "none",
+                    "disableOnAutoConfigure": true
+                },
+                "dataTypes": {
+                    "allowNumeric": true,
+                    "allowDateTime": false,
+                    "allowTimeSpan": false,
+                    "allowString": false,
+                    "allowBoolean": false
+                }
+            }
+        ]
+    },
+    "files": ["index.html", "main.css", "build/main.js"]
+}

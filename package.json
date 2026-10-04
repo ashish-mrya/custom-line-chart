@@ -1,0 +1,22 @@
+{
+    "name": "custom-line-chart",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "mods-sdk build",
+        "build:dev": "mods-sdk build --watch --debug",
+        "tsc:dev": "tsc --watch",
+        "server": "mods-dev-server"
+    },
+    "devDependencies": {
+        "@spotfire/mods-api": "~2.2.0",
+        "@spotfire/mods-dev-server": "^1.2.0",
+        "@spotfire/mods-sdk": "^1.2.0",
+        "esbuild": "^0.28.1",
+        "prettier": "^3.8.1",
+        "typescript": "^5.9.3"
+    },
+    "engines": {
+        "node": ">=22.12.0"
+    }
+}
